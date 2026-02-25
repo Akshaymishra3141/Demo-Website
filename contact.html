@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Notus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black text-white font-['Inter']">
+
+    <nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
+        <a href="index.html" class="flex items-center gap-2">
+            <div class="w-6 h-6 bg-white rounded-sm"></div>
+            <span class="text-xl font-semibold tracking-tight">Notus</span>
+        </a>
+        <div class="hidden md:flex gap-8 text-gray-400 text-sm">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <a href="about.html" class="hover:text-white">About</a>
+            <a href="contact.html" class="text-white">Contact</a>
+        </div>
+    </nav>
+
+    <section class="max-w-3xl mx-auto px-8 pt-20 pb-12 text-center">
+        <h1 class="text-5xl font-medium mb-6">Let’s talk agents.</h1>
+        <p class="text-gray-400 text-lg">Have a specific use case or need a custom enterprise solution? Our engineering team is ready to assist.</p>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-8 pb-32">
+        <div class="bg-zinc-950 border border-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl">
+            <form action="#" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-400">Full Name</label>
+                        <input type="text" placeholder="Jane Doe" class="w-full bg-black border border-gray-800 rounded-xl p-4 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition text-white">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-400">Work Email</label>
+                        <input type="email" placeholder="jane@company.com" class="w-full bg-black border border-gray-800 rounded-xl p-4 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition text-white">
+                    </div>
+                </div>
+                
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-400">How can we help?</label>
+                    <select class="w-auto bg-black border border-gray-800 rounded-xl p-4 focus:border-orange-500 outline-none text-gray-400 block appearance-none">
+                        <option>General Inquiry</option>
+                        <option>Enterprise Demo</option>
+                        <option>Partnership</option>
+                        <option>Technical Support</option>
+                    </select>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-400">Message</label>
+                    <textarea rows="5" placeholder="Tell us about your project..." class="w-full bg-black border border-gray-800 rounded-xl p-4 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition text-white"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-white text-black font-semibold py-4 rounded-xl hover:bg-orange-500 hover:text-white transition-all duration-300 transform active:scale-[0.98]">
+                    Send Message
+                </button>
+            </form>
+
+            <div class="mt-12 flex flex-col md:flex-row justify-between items-center border-t border-gray-900 pt-8 gap-6">
+                <div class="text-center md:text-left">
+                    <p class="text-gray-500 text-sm">Direct Email</p>
+                    <p class="font-medium">hello@notus.ai</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <p class="text-gray-500 text-sm">Office</p>
+                    <p class="font-medium">San Francisco, CA</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center hover:bg-gray-800 cursor-pointer text-xs">X</div>
+                    <div class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center hover:bg-gray-800 cursor-pointer text-xs">In</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

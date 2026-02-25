@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notus | Agentic Workflow Orchestration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        // Theme Switcher Logic
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#fb923c',
+                    }
+                }
+            }
+        }
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        }
+
+        // Apply theme on load
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease; }
+        .bg-gradient-text {
+            background: linear-gradient(to right, #f87171, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-black text-black dark:text-white">
+
+    <nav class="sticky top-0 z-50 backdrop-blur-md border-b border-gray-100 dark:border-zinc-900">
+        <div class="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-black dark:bg-white rounded-sm"></div>
+                <span class="text-xl font-semibold tracking-tight">Notus</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 text-gray-500 dark:text-gray-400 text-sm font-medium">
+                <a href="about.html" class="hover:text-black dark:hover:text-white transition">About</a>
+                <a href="contact.html" class="hover:text-black dark:hover:text-white transition">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition">
+                    <svg id="theme-toggle-light-icon" class="hidden dark:block h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                    <svg id="theme-toggle-dark-icon" class="block dark:hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+                <a href="#" class="bg-black dark:bg-white text-white dark:text-black px-5 py-2 rounded-lg text-sm font-medium hover:opacity-80 transition">Start building</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="flex flex-col items-center justify-center text-center px-4 pt-24 pb-16">
+        <p class="text-orange-500 font-medium text-sm mb-6 tracking-wide uppercase">For fast moving engineering teams</p>
+        <h1 class="text-5xl md:text-8xl font-medium tracking-tight max-w-5xl leading-[1.1] mb-8">
+            Manage and simulate agentic <span class="bg-gradient-text">workflows</span>
+        </h1>
+        <p class="text-gray-500 dark:text-gray-400 max-w-2xl text-lg md:text-xl leading-relaxed">
+            The visual orchestration layer for AI agents. Build complex multi-agent systems with zero friction and enterprise-grade reliability.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 mt-12">
+            <button class="bg-black dark:bg-white text-white dark:text-black px-10 py-4 rounded-xl font-medium shadow-xl hover:scale-105 transition duration-300">Get Started Free</button>
+            <button class="border border-gray-200 dark:border-zinc-800 px-10 py-4 rounded-xl font-medium hover:bg-gray-50 dark:hover:bg-zinc-900 transition">Book a Demo</button>
+        </div>
+
+        <div class="mt-16 flex items-center gap-4 text-sm text-gray-500 bg-gray-50 dark:bg-zinc-900/50 px-6 py-2 rounded-full border border-gray-100 dark:border-zinc-800">
+            <span class="flex text-brand">★★★★★</span>
+            <div class="h-4 w-[1px] bg-gray-300 dark:bg-zinc-700"></div>
+            <span>Innovative AI solution 2025 by <strong>Gartner</strong></span>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-8 py-24 border-t border-gray-100 dark:border-zinc-900">
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="space-y-4">
+                <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold">Instant Simulation</h3>
+                <p class="text-gray-500 dark:text-gray-400">Test agent behaviors in a sandboxed environment before deploying to production.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold">Governance & Safety</h3>
+                <p class="text-gray-500 dark:text-gray-400">Integrated guardrails ensure your agents stay within defined operational bounds.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold">Visual Data Flows</h3>
+                <p class="text-gray-500 dark:text-gray-400">Map inputs and outputs visually. No more spaghetti code for complex AI logic.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-100 dark:border-zinc-900 py-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8">
+            <p class="text-center text-xs uppercase tracking-[0.2em] text-gray-400 mb-12 font-bold">As Featured In</p>
+            <div class="flex flex-wrap justify-center md:justify-between items-center gap-12 opacity-40 grayscale dark:invert transition-all">
+                <span class="text-2xl font-bold">Bloomberg</span>
+                <span class="text-2xl font-black tracking-tighter">WIRED</span>
+                <span class="text-2xl font-serif italic">Forbes</span>
+                <span class="text-2xl font-semibold tracking-tight">The Guardian</span>
+                <span class="text-2xl font-bold italic">TechCrunch</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
